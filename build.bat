@@ -2,7 +2,7 @@
 
 clang++ ./code/win32_handmade.cpp ^
   -g ^
-  -lkernel32 -luser32 -lgdi32 ^
+  -lkernel32 -luser32 ^
   -o ./build/win32_handmade.exe
 
 REM -Wall -Wextra -Wpedantic ^

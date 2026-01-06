@@ -1,22 +1,7 @@
-# HandmadeHero
-
-By Casey Muratori 🥰
-
-# Build and Run (on Windows)
-```bash
-./build.bat
-./build/win32_handmade.exe
-```
-
-# For LSP auto completions update path to your project (if using Neovim)
-`compile_commands.json`
-
-```json
 [
   {
-    "directory": "/mnt/c/Users/Slim 5/Desktop/handmade_hero", # For WSL2
+    "directory": "/mnt/c/Users/Slim 5/Desktop/handmade_hero",
     "command": "clang++ ./code/win32_handmade.cpp -g -Wall -Wextra -DWIN32 -DUNICODE -D_UNICODE -I/mnt/c/Program\\ Files\\ \\(x86\\)/Windows\\ Kits/10/Include/10.0.22621.0/um -I/mnt/c/Program\\ Files\\ \\(x86\\)/Windows\\ Kits/10/Include/10.0.22621.0/shared -I/mnt/c/Program\\ Files\\ \\(x86\\)/Windows\\ Kits/10/Include/10.0.22621.0/ucrt -I/mnt/c/Program\\ Files/Microsoft\\ Visual\\ Studio/18/Community/VC/Tools/MSVC/14.29.30133/include",
     "file": "./code/win32_handmade.cpp"
   }
 ]
-```
