@@ -2,13 +2,13 @@
 
 By Casey Muratori 🥰
 
-# Build and Run (on Windows)
+### Build and Run (on Windows)
 ```bash
 ./build.bat
 ./build/win32_handmade.exe
 ```
 
-# For LSP auto completions update path to your project (if using Neovim)
+### For LSP auto completions update path to your project (if using Neovim)
 `compile_commands.json`
 
 ```json
