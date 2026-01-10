@@ -1,5 +1,11 @@
 #include <windows.h>
 
+#define internal static
+#define local_persist static
+#define global_variable static
+
+global_variable bool Running;
+
 LRESULT CALLBACK MainWindowCallback(
   HWND   Window,
   UINT   Message,
@@ -15,17 +21,15 @@ LRESULT CALLBACK MainWindowCallback(
   }
   break;
 
-  case WM_DESTROY:
+  case WM_CLOSE:
   {
-    OutputDebugStringA("WM_DESTROY\n");
-    PostQuitMessage(0);
+    Running = false;
   }
   break;
 
-  case WM_CLOSE:
+  case WM_DESTROY:
   {
-    OutputDebugStringA("WM_CLOSE\n");
-    DestroyWindow(Window);
+    Running = false;
   }
   break;
 
@@ -90,7 +94,8 @@ int CALLBACK WinMain(
       0);
 
     if (WindowHandle) {
-      for (;;) {
+      Running = true;
+      while (Running) {
         MSG Message;
         BOOL MessageResult = GetMessage(&Message, 0, 0, 0);
         if (MessageResult > 0) {
